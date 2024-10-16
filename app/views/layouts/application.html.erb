@@ -15,9 +15,20 @@
     <link rel="apple-touch-icon" href="/icon.png">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script src="https://unpkg.com/feather-icons"></script>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <!-- Flash Messages -->
+      <% flash.each do |type, message| %>
+        <div class="flash-message <%= flash_class_for(type) %>">
+          <span class="flash-message-content"><%= message %></span>
+          <span class="flash-close" onclick="this.parentElement.style.display='none';">&times;</span>
+        </div>
+      <% end %>
+
+      <%= yield %>
+    </div>
   </body>
 </html>
