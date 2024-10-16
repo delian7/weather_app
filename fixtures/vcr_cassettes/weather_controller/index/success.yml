@@ -2,7 +2,98 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.openweathermap.org/data/2.5/forecast?appid=<API_KEY>&lat=38.897556&lon=-77.03645399999999&units=imperial
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=1600%20Pennsylvania%20Avenue%20NW,%20Washington,%20DC%2020500&key=<API_KEY>&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Wed, 16 Oct 2024 22:22:24 GMT
+      Pragma:
+      - no-cache
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Goog-Maps-Metro-Area:
+      - Washington, DC
+      Content-Security-Policy-Report-Only:
+      - script-src 'none'; form-action 'none'; frame-src 'none'; report-uri https://csp.withgoogle.com/csp/scaffolding/msaifdggmnwc:229:0
+      Cross-Origin-Opener-Policy-Report-Only:
+      - same-origin; report-to=coop_reporting
+      Report-To:
+      - '{"group":"coop_reporting","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/scaffolding/msaifdggmnwc:229:0"}],}'
+      Server:
+      - mafe
+      Content-Length:
+      - '2873'
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server-Timing:
+      - gfet4t7; dur=55
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: "{\n   \"results\" : \n   [\n      {\n         \"address_components\"
+        : \n         [\n            {\n               \"long_name\" : \"1600\",\n
+        \              \"short_name\" : \"1600\",\n               \"types\" : \n               [\n
+        \                 \"street_number\"\n               ]\n            },\n            {\n
+        \              \"long_name\" : \"Pennsylvania Avenue Northwest\",\n               \"short_name\"
+        : \"Pennsylvania Avenue NW\",\n               \"types\" : \n               [\n
+        \                 \"route\"\n               ]\n            },\n            {\n
+        \              \"long_name\" : \"Northwest Washington\",\n               \"short_name\"
+        : \"Northwest Washington\",\n               \"types\" : \n               [\n
+        \                 \"neighborhood\",\n                  \"political\"\n               ]\n
+        \           },\n            {\n               \"long_name\" : \"Washington\",\n
+        \              \"short_name\" : \"Washington\",\n               \"types\"
+        : \n               [\n                  \"locality\",\n                  \"political\"\n
+        \              ]\n            },\n            {\n               \"long_name\"
+        : \"District of Columbia\",\n               \"short_name\" : \"DC\",\n               \"types\"
+        : \n               [\n                  \"administrative_area_level_1\",\n
+        \                 \"political\"\n               ]\n            },\n            {\n
+        \              \"long_name\" : \"United States\",\n               \"short_name\"
+        : \"US\",\n               \"types\" : \n               [\n                  \"country\",\n
+        \                 \"political\"\n               ]\n            },\n            {\n
+        \              \"long_name\" : \"20500\",\n               \"short_name\" :
+        \"20500\",\n               \"types\" : \n               [\n                  \"postal_code\"\n
+        \              ]\n            },\n            {\n               \"long_name\"
+        : \"0005\",\n               \"short_name\" : \"0005\",\n               \"types\"
+        : \n               [\n                  \"postal_code_suffix\"\n               ]\n
+        \           }\n         ],\n         \"formatted_address\" : \"1600 Pennsylvania
+        Avenue NW, Washington, DC 20500, USA\",\n         \"geometry\" : \n         {\n
+        \           \"location\" : \n            {\n               \"lat\" : 38.8975562,\n
+        \              \"lng\" : -77.03645399999999\n            },\n            \"location_type\"
+        : \"ROOFTOP\",\n            \"viewport\" : \n            {\n               \"northeast\"
+        : \n               {\n                  \"lat\" : 38.8995232302915,\n                  \"lng\"
+        : -77.03645399999999\n               },\n               \"southwest\" : \n
+        \              {\n                  \"lat\" : 38.8968252697085,\n                  \"lng\"
+        : -77.03945980000002\n               }\n            }\n         },\n         \"place_id\"
+        : \"ChIJj29ffVS3t4kRssvmz4DOiZE\",\n         \"plus_code\" : \n         {\n
+        \           \"compound_code\" : \"VXX7+3C Washington, DC\",\n            \"global_code\"
+        : \"87C4VXX7+3C\"\n         },\n         \"types\" : \n         [\n            \"street_address\"\n
+        \        ]\n      }\n   ],\n   \"status\" : \"OK\"\n}"
+  recorded_at: Wed, 16 Oct 2024 22:22:24 GMT
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/weather?appid=<API_KEY>&lat=38.8975562&lon=-77.03645399999999&units=imperial
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +112,49 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Wed, 16 Oct 2024 22:22:23 GMT
+      - Wed, 16 Oct 2024 22:22:24 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '517'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?lat=38.9&lon=-77.04&units=imperial"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":-77.0365,"lat":38.8976},"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"base":"stations","main":{"temp":55.51,"feels_like":53.2,"temp_min":52.7,"temp_max":57.18,"pressure":1020,"humidity":52,"sea_level":1020,"grnd_level":1012},"visibility":10000,"wind":{"speed":11.5,"deg":340},"clouds":{"all":75},"dt":1729117304,"sys":{"type":2,"id":2002287,"country":"US","sunrise":1729077530,"sunset":1729117680},"timezone":-14400,"id":4140963,"name":"Washington
+        D.C.","cod":200}'
+  recorded_at: Wed, 16 Oct 2024 22:22:24 GMT
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/forecast?appid=<API_KEY>&lat=38.8975562&lon=-77.03645399999999&units=imperial
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Wed, 16 Oct 2024 22:22:25 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -119,5 +252,5 @@ http_interactions:
         18:00:00"},{"dt":1729544400,"main":{"temp":75.25,"feels_like":73.71,"temp_min":75.25,"temp_max":75.25,"pressure":1024,"sea_level":1024,"grnd_level":1017,"humidity":26,"temp_kf":0},"weather":[{"id":800,"main":"Clear","description":"clear
         sky","icon":"01d"}],"clouds":{"all":0},"wind":{"speed":2.75,"deg":316,"gust":3.11},"visibility":10000,"pop":0,"sys":{"pod":"d"},"dt_txt":"2024-10-21
         21:00:00"}],"city":{"id":4140963,"name":"Washington D.C.","coord":{"lat":38.8976,"lon":-77.0365},"country":"US","population":601723,"timezone":-14400,"sunrise":1729077530,"sunset":1729117680}}'
-  recorded_at: Wed, 16 Oct 2024 22:22:23 GMT
+  recorded_at: Wed, 16 Oct 2024 22:22:25 GMT
 recorded_with: VCR 6.3.1
